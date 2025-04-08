@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NBA2K25 官方中文网站 - 体验最真实的篮球模拟游戏">
+    <title>NBA2K25 - 官方中文站</title>
+    <style>
+        :root {
+            --primary-blue: #0A224E;
+            --accent-red: #E03C31;
+            --dark-bg: #1A1A1A;
+            --light-text: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: var(--light-text);
+        }
+
+        /* 头部样式 */
+        .main-header {
+            background: var(--primary-blue);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-red);
+        }
+
+        /* 英雄区域 */
+        .hero-section {
+            height: 80vh;
+            background: linear-gradient(rgba(10,34,78,0.8), rgba(10,34,78,0.8)),
+                        url('hero-bg.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* 球员展示 */
+        .player-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+
+        .player-card {
+            background: #2A2A2A;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .player-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .player-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .player-info {
+            padding: 1.5rem;
+        }
+
+        /* 游戏特色 */
+        .features-section {
+            background: var(--primary-blue);
+            padding: 4rem 0;
+        }
+
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .feature-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .main-nav ul {
+                display: none;
+            }
+        }
+    </style>
+    <style>
+        .hero-section video {
+            width: 100%;
+            height: auto; /* 保持纵横比 */
+            max-width: 800px; /* 可选：设置最大宽度 */
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <img src="https://assets.2k.com/1a6ngf98576c/2ZlxZnAT9KkwMe5iu5u3yn/555353af9fe81bacbe9fdca0ba037ad6/NBA-2K25-Logo-White.gif" alt="NBA2K25 游戏logo" class="logo">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#features" class="nav-link">游戏特色</a></li>
+                    <li><a href="#players" class="nav-link">传奇球员</a></li>
+                    <li><a href="#buy" class="nav-link">立即购买</a></li>
+                    <li><a href="#news" class="nav-link">最新动态</a></li>
+                    <li><a href="#login" class="nav-link" onclick="showLoginModal()">登录/注册</a></li>
+                </ul>
+            </nav>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">体验次世代篮球</h1>
+            <video controls>
+                <source src="https://1251542705.vod2.myqcloud.com/dc42d44avodtranscq1251542705/edca3c7d1397757889716137780/v.f100820.mp4" type="video/mp4">
+                您的浏览器不支持 HTML5 视频标签。
+            </video>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <div class="nav-container">
+            <h2 class="section-title">全新特色功能</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <h3>全新物理引擎</h3>
+                    <p>真实模拟球员动作与物理碰撞</p>
+                </div>
+                <div class="feature-card">
+                    <h3>生涯模式2.0</h3>
+                    <p>打造属于你的篮球传奇故事</p>
+                </div>
+                <div class="feature-card">
+                    <h3>在线竞技场</h3>
+                    <p>与全球玩家实时对战</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="players" class="player-grid nav-container">
+        <article class="player-card">
+            <img src="https://a0.eyeassets.com/resource/face/215137p8oaj6b4abccso4n.png" alt="勒布朗·詹姆斯" class="player-image">
+            <div class="player-info">
+                <h3>勒布朗·詹姆斯</h3>
+                <p>综合评分: 95</p>
+            </div>
+        </article>
+        <article class="player-card">
+            <img src="https://a0.eyeassets.com/resource/face/004106hmp1n4mzmcm9q6m2.png" alt="斯蒂芬·库里" class="player-image">
+            <div class="player-info">
+                <h3>斯蒂芬·库里</h3>
+                <p>综合评分: 95</p>
+            </div>
+        </article>
+    </section>
+
+    <footer class="main-footer">
+        <div class="nav-container">
+            <p>&copy; 2024 NBA2K25. 2K官方授权产品</p>
+            <div class="social-links">
+                <a href="#"><img src="https://store-images.s-microsoft.com/image/apps.37935.9007199266245907.b029bd80-381a-4869-854f-bac6f359c5c9.91f8693c-c75b-4050-a796-63e1314d18c9?h=307" alt="Facebook" wight="20" height="20"></a>
+                <a href="#"><img src="https://ts4.tc.mm.bing.net/th?id=OSAAS.5E8A0E30002329042FCEC75E8A2561C7&w=72&h=72&c=1&rs=1&o=6&dpr=1.3&pid=TechQna" alt="Twitter" weight="20" height="20"></a>
+            </div>
+        </div>
+    </footer>
+    <div id="loginModal" class="login-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+            <h2>欢迎回到NBA2K25</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="email">电子邮箱</label>
+                    <input type="email" id="email" required placeholder="输入注册邮箱">
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" required placeholder="输入密码">
+                </div>
+                <button type="submit" class="login-btn">立即登录</button>
+                <div class="form-footer">
+                    <a href="#forgot">忘记密码？</a>
+                    <p>没有账号？<a href="#register">立即注册</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <style>
+    /* 登录模态框样式 */
+    .login-modal {
+        display: none;
+        position: fixed;
+        z-index: 1001;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(5px);
+    }
+    
+    .modal-content {
+        position: relative;
+        background: var(--dark-bg);
+        margin: 10% auto;
+        padding: 2rem;
+        width: 90%;
+        max-width: 450px;
+        border-radius: 12px;
+        border: 1px solid var(--primary-blue);
+        animation: modalSlide 0.3s ease-out;
+    }
+    
+    @keyframes modalSlide {
+        from { transform: translateY(-20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    
+    .close-btn {
+        position: absolute;
+        right: 1.5rem;
+        top: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+    
+    .close-btn:hover {
+        color: var(--accent-red);
+    }
+    
+    /* 表单样式 */
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--light-text);
+    }
+    
+    input {
+        width: 100%;
+        padding: 12px;
+        background: #333;
+        border: 1px solid var(--primary-blue);
+        border-radius: 6px;
+        color: white;
+        font-size: 1rem;
+    }
+    
+    .login-btn {
+        width: 100%;
+        padding: 12px;
+        background: var(--accent-red);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+    
+    .login-btn:hover {
+        background: #c53025;
+    }
+    
+    .form-footer {
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+    
+    .form-footer a {
+        color: var(--accent-red);
+        text-decoration: none;
+    }
+    
+    @media (max-width: 480px) {
+        .modal-content {
+            margin: 20% auto;
+            padding: 1.5rem;
+        }
+    }
+    </style>
+    
+    <script>
+    // 登录功能逻辑
+    function showLoginModal() {
+        document.getElementById('loginModal').style.display = 'block';
+    }
+    
+    function closeLoginModal() {
+        document.getElementById('loginModal').style.display = 'none';
+    }
+    
+    function handleLogin(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        
+        // 这里添加实际登录逻辑
+        console.log('登录尝试:', { email, password });
+        alert('登录功能待实现');
+        closeLoginModal();
+    }
+    
+    // 点击模态框外部关闭
+    window.onclick = function(event) {
+        const modal = document.getElementById('loginModal');
+        if (event.target == modal) {
+            closeLoginModal();
+        }
+    }
+    </script>
+</body>
+</html>
